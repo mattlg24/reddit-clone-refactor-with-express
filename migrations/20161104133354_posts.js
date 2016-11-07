@@ -9,7 +9,6 @@ exports.up = function(knex) {
         table.string('description', 1000)
         table.integer('votes')
         table.string('date')
-        table.string('momentDate')
         table.timestamps(true, true);
     })
 }
