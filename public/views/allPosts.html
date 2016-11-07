@@ -87,7 +87,7 @@
                 </a>
             </div>
             <div class="media-body">
-                <h4 class="media-heading">{{post.title}} | <span class="glyphicon glyphicon-arrow-down" aria-hidden="true" ng-click="downVote(post)"></span><span class="glyphicon glyphicon-arrow-up" aria-hidden="true" ng-click="upVote(post)"></span><span ng-class="{plusVote: post.votes > 0, negativeVote: post.votes < 0}">{{post.votes}}</span></h4>
+                <h4 class="media-heading"><span class="postTitle" ng-click="onePost()">{{post.title}}</span> | <span class="glyphicon glyphicon-arrow-down" aria-hidden="true" ng-click="downVote(post)"></span><span class="glyphicon glyphicon-arrow-up" aria-hidden="true" ng-click="upVote(post)"></span><span ng-class="{plusVote: post.votes > 0, negativeVote: post.votes < 0}">{{post.votes}}</span></h4>
                 <p class="pull-right">By {{post.author}}</p>
                 <br>
                 <p>{{post.description}}</p>

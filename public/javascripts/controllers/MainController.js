@@ -26,6 +26,10 @@ app.controller('MainController', ['$scope', '$http', 'postsService', function($s
         $scope.postForm.$setPristine()
     }
 
+    $scope.onePost = function() {
+        console.log('i was clicked');
+    }
+
     $scope.downVote = function(post) {
         post.votes--
     }

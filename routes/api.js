@@ -12,6 +12,8 @@ router.get('/allPosts', function(req, res, next) {
         })
 });
 
+
+
 router.post('/newPost', function(req, res, next) {
     // console.log('api.js router.post');
     // console.log('req.body', req.body);
