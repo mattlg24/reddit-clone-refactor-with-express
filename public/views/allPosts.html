@@ -9,7 +9,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-            <a class="navbar-brand" href="#">Reddit Clone</a>
+            <a class="navbar-brand" href="#/">Reddit Clone</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -70,7 +70,7 @@
                 <input type="text" name="description" id="description" class="form-control" placeholder="Description" ng-model="post.description" ng-required="true">
                 <small class="help-block" ng-show="postForm.description.$error.minlength">Description is too short</small>
             </div>
-            <button type="submit" name="button" class="btn btn-default" ng-click="showForm = !showForm" ng-disabled="postForm.$invalid">Submit Post</button>
+            <button type="submit" name="button" class="btn btn-success" ng-click="showForm = !showForm" ng-disabled="postForm.$invalid">Submit Post</button>
         </form>
         <!-- End post form -->
         <!-- End nav section -->

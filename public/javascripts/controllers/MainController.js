@@ -17,11 +17,12 @@ app.controller('MainController', ['$scope', '$http', 'postsService', function($s
             // console.log('am i getting here?');
         postsService.newPost(obj)
             .then(function(results) {
-                // console.log('controller results are', results.data);
+                console.log('controller results are', results.data);
             })
         $scope.post.date = new Date()
         $scope.allPosts.push($scope.post)
-            // console.log('all posts are', $scope.allPosts);
+        console.log('all posts are', $scope.allPosts);
+        console.log('all posts length', $scope.allPosts.length);
         $scope.post = ''
         $scope.postForm.$setPristine()
     }
