@@ -14,7 +14,7 @@
                 <button type="button" class="btn btn-danger" ng-click="deletePost()">Delete Post</button>
             </div>
     </div>
-<!-- edit post form -->
+    <!-- edit post form -->
     <div ng-show="showEditPostForm">
         <!-- Begin post form -->
         <form action="#" name="editPostForm" ng-submit="editPost(onePost)">
@@ -22,17 +22,13 @@
                 <label for="title">Title</label>
                 <input type="text" name="title" id="title" class="form-control" ng-model="onePost.title" ng-required="true">
             </div>
-            <div class="form-group" ng-class="{'has-error': postForm.author.$invalid && !postForm.author.$pristine, 'has-success': postForm.author.$valid}">
-                <label for="author">Author</label>
-                <input type="text" name="author" id="author" class="form-control" ng-model="onePost.author" ng-required="true">
-            </div>
             <div class="form-group" ng-class="{'has-error': postForm.imageUrl.$invalid && !postForm.imageUrl.$pristine, 'has-success': postForm.imageUrl.$valid}">
                 <label for="imageUrl">Image URL</label>
                 <input type="text" name="imageUrl" id="imageUrl" class="form-control" ng-model="onePost.imageUrl" ng-required="true">
             </div>
             <div class="form-group" ng-class="{'has-error': postForm.description.$invalid && !postForm.description.$pristine, 'has-success': postForm.description.$valid}">
                 <label for="description">Description</label>
-                <input type="text" name="description" id="description" class="form-control" ng-model="onePost.description"  ng-required="true">
+                <input type="text" name="description" id="description" class="form-control" ng-model="onePost.description" ng-required="true">
             </div>
             <button type="submit" name="button" class="btn btn-success" ng-click="showEditPostForm = !showEditPostForm" ng-disabled="postForm.$invalid">Submit Edited Post</button>
         </form>
