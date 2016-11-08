@@ -3,7 +3,7 @@ var router = express.Router();
 var knex = require('../db/knex')
 
 /* GET home page. */
-router.get('/posts', function(req, res, next) {
+router.get('/allPosts', function(req, res, next) { //should be /posts
     // console.log('i got here api.js router.get');
     knex('posts')
         .then(function(results) {
@@ -12,7 +12,7 @@ router.get('/posts', function(req, res, next) {
         })
 });
 
-router.get('/posts/:id', function(req, res, next) {
+router.get('/onePost/:id', function(req, res, next) { //should be posts/:id
     // console.log('i got to one post router.get');
     // console.log('id', req.params.id);
     knex('posts')
@@ -23,7 +23,7 @@ router.get('/posts/:id', function(req, res, next) {
         })
 })
 
-router.post('/posts', function(req, res, next) {
+router.post('/newPost', function(req, res, next) { //should be /posts
     // console.log('api.js router.post');
     // console.log('req.body', req.body);
     knex('posts ')
@@ -40,7 +40,7 @@ router.post('/posts', function(req, res, next) {
         })
 })
 
-router.put('/posts/:id', function(req, res, next) {
+router.put('/onePost/:id', function(req, res, next) { //should be /posts/:id
     console.log('api.js router.put');
     console.log('id', req.params.id);
     console.log('req.body', req.body);
@@ -58,7 +58,7 @@ router.put('/posts/:id', function(req, res, next) {
 
 })
 
-router.delete('/posts/:id', function(req, res, next) {
+router.delete('/onePost/:id', function(req, res, next) { //should be /posts/:id
     // console.log('api.js router.delete');
     // console.log('id', req.params.id);
     knex('posts ')

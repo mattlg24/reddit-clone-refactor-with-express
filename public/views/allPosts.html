@@ -82,7 +82,9 @@
     <div ng-repeat="post in allPosts | orderBy: orderVal | filter:searchText" class="onePost">
         <div class="media">
             <div class="media-left">
-                <img class="media-object image" ng-src="{{post.imageUrl}}" alt="Your Picture">
+                <a href="#">
+                    <img class="media-object image" ng-src="{{post.imageUrl}}" alt="Your Picture">
+                </a>
             </div>
             <div class="media-body">
                 <h4 class="media-heading"><a href="/#/onePost/{{post.id}}">{{post.title}}</a> | <span class="glyphicon glyphicon-arrow-down" aria-hidden="true" ng-click="downVote(post)"></span><span class="glyphicon glyphicon-arrow-up" aria-hidden="true" ng-click="upVote(post)"></span><span ng-class="{plusVote: post.votes > 0, negativeVote: post.votes < 0}">{{post.votes}}</span></h4>
