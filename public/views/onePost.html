@@ -1,0 +1,19 @@
+<h1>One post</h1>
+
+<div class="media">
+    <div class="media-left">
+        <a href="#">
+            <img class="media-object image" ng-src="{{onePost.imageUrl}}" alt="Your Picture">
+        </a>
+    </div>
+    <div class="media-body">
+        <h4 class="media-heading">{{onePost.title}} | <span class="glyphicon glyphicon-arrow-down" aria-hidden="true" ng-click="downVote(post)"></span><span class="glyphicon glyphicon-arrow-up" aria-hidden="true" ng-click="upVote(post)"></span><span ng-class="{plusVote: post.votes > 0, negativeVote: post.votes < 0}">{{onePost.votes}}</span></h4>
+        <p class="pull-right">By {{onePost.author}}</p>
+        <br>
+        <p>{{onePost.description}}</p>
+        <p><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{onePost.date | date:'fullDate'}}
+            <div>
+                <button type="button" class="btn btn-info">Edit Post</button>
+                <button type="button" class="btn btn-danger">Delete Post</button>
+            </div>
+    </div>

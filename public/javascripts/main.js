@@ -6,6 +6,14 @@ app.config(function($routeProvider, $locationProvider) {
             templateUrl: '../views/allPosts.html',
             controller: 'MainController'
         })
+        .when('/onePost/:id', {
+            templateUrl: '../views/onePost.html',
+            controller: 'OnePostController'
+        })
+        .when('/onePost/:id', {
+            templateUrl: '/',
+            controller: 'DeleteController'
+        })
 })
 
 

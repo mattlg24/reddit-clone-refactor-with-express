@@ -12,7 +12,17 @@ router.get('/allPosts', function(req, res, next) {
         })
 });
 
+router.get('/onePost/:id', function(req, res, next) {
+    // console.log('i got to one post router.get');
+    // console.log('id', req.params.id);
+    knex('posts')
+        .where('id', req.params.id)
+        .then(function(onePost) {
+            console.log('one post is', onePost);
+            res.send(onePost)
+        })
 
+})
 
 router.post('/newPost', function(req, res, next) {
     // console.log('api.js router.post');
