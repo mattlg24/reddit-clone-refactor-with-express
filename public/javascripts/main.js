@@ -10,10 +10,10 @@ app.config(function($routeProvider, $locationProvider) {
             templateUrl: '../views/onePost.html',
             controller: 'OnePostController'
         })
-        .when('/onePost/:id', {
-            templateUrl: '/',
-            controller: 'DeleteController'
-        })
+        // .when('/onePost/:id', {
+        //     templateUrl: '/',
+        //     controller: 'DeleteController'
+        // })
 })
 
 

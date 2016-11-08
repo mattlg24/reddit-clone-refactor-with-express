@@ -14,14 +14,14 @@ app.controller('MainController', ['$scope', '$http', 'postsService', function($s
 
     $scope.newPost = function(obj) {
         event.preventDefault()
-        console.log('am i getting here?');
+            // console.log('am i getting here?');
         postsService.newPost(obj)
             .then(function(results) {
                 // console.log('controller results are', results.data);
             })
         $scope.post.date = new Date()
         $scope.allPosts.push($scope.post)
-        console.log('all posts are', $scope.allPosts);
+            // console.log('all posts are', $scope.allPosts);
         $scope.post = ''
         $scope.postForm.$setPristine()
     }
@@ -35,7 +35,7 @@ app.controller('MainController', ['$scope', '$http', 'postsService', function($s
     }
 
     $scope.submitCommentForm = function(post) {
-        console.log('post is', post);
+        // console.log('post is', post);
         // $log.info('all posts...............', $scope.posts)
         event.preventDefault()
             // console.log('postid', post.id);

@@ -1,6 +1,6 @@
 var app = angular.module('redditCloneApp')
 
-app.controller('OnePostController', ['$scope', '$http', '$routeParams', 'onePostService', function($scope, $http, $routeParams, onePostService) {
+app.controller('OnePostController', ['$scope', '$http', '$routeParams', 'onePostService', 'deleteService', '$location', function($scope, $http, $routeParams, onePostService, deleteService, $location) {
 
     let id = $routeParams.id
         // console.log('post id is', id);
@@ -10,4 +10,11 @@ app.controller('OnePostController', ['$scope', '$http', '$routeParams', 'onePost
             // console.log('OnePostController results are', results.data[0]);
             $scope.onePost = results.data[0]
         })
+
+    $scope.deletePost = function() {
+        console.log('i was clicked');
+        deleteService.delete(id)
+        $location.url('/')
+
+    }
 }])

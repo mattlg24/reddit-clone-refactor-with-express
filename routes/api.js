@@ -18,10 +18,9 @@ router.get('/onePost/:id', function(req, res, next) {
     knex('posts')
         .where('id', req.params.id)
         .then(function(onePost) {
-            console.log('one post is', onePost);
+            // console.log('one post is', onePost);
             res.send(onePost)
         })
-
 })
 
 router.post('/newPost', function(req, res, next) {
@@ -38,6 +37,17 @@ router.post('/newPost', function(req, res, next) {
         }, '*')
         .then(function(results) {
             res.send(results)
+        })
+})
+
+router.delete('/onePost/:id', function(req, res, next) {
+    console.log('api.js router.delete');
+    console.log('id', req.params.id);
+    knex('posts ')
+        .del()
+        .where('id', req.params.id)
+        .then(function() {
+            console.log('i think i was deleted');
         })
 
 })
