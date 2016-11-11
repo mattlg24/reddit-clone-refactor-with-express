@@ -7,6 +7,7 @@ exports.seed = function(knex, Promise) {
             return Promise.all([
                 // Inserts seed entries
                 knex('posts').insert({
+                    user_id: '3',
                     title: 'Thanksgiving',
                     author: 'Tom the Turkey',
                     imageUrl: 'http://www.clipartlord.com/wp-content/uploads/2015/01/turkey8.png',
@@ -16,6 +17,7 @@ exports.seed = function(knex, Promise) {
                     // momentDate: moment().subtract(3, 'day').calendar()
                 }),
                 knex('posts').insert({
+                    user_id: '2',
                     title: 'Christmas',
                     author: 'Santa',
                     imageUrl: 'http://coloringkids.org/wp-content/uploads/santa-cartoon.jpg',
@@ -25,6 +27,7 @@ exports.seed = function(knex, Promise) {
                     // momentDate: moment().subtract(1, 'day').calendar()
                 }),
                 knex('posts').insert({
+                    user_id: '1',
                     title: 'Halloween',
                     author: 'Dracula',
                     imageUrl: 'http://www.wikihow.com/images/e/ee/Colored-Intro-7.jpg',

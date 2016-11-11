@@ -5,10 +5,16 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var cookieSession = require('cookie-session')
 var bodyParser = require('body-parser');
+var bcrypt = require('bcrypt')
 
 var api = require('./routes/api');
 
 var app = express();
+
+app.use(cookieSession({
+    name: 'reddit-refactor',
+    keys: [process.env.KEY1, process.env.KEY2]
+}))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
