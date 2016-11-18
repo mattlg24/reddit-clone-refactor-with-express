@@ -1,10 +1,16 @@
 var app = angular.module('redditCloneApp')
 
-app.controller('MainController', ['$scope', '$http', 'postsService', function($scope, $http, postsService) {
+app.controller('MainController', ['$scope', '$http', 'postsService', '$cookies', function($scope, $http, postsService, $cookies) {
 
     $scope.view = {}
     $scope.post = {}
     $scope.commentForm = {};
+
+    const cookie = $cookies.getObject('loggedIn')
+
+    $scope.logout = function() {
+        $cookies.remove('loggedIn')
+    }
 
     postsService.getPosts()
         .then(function(results) {
@@ -21,8 +27,8 @@ app.controller('MainController', ['$scope', '$http', 'postsService', function($s
             })
         $scope.post.date = new Date()
         $scope.allPosts.push($scope.post)
-        console.log('all posts are', $scope.allPosts);
-        console.log('all posts length', $scope.allPosts.length);
+            // console.log('all posts are', $scope.allPosts);
+            // console.log('all posts length', $scope.allPosts.length);
         $scope.post = ''
         $scope.postForm.$setPristine()
     }

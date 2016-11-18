@@ -1,0 +1,13 @@
+<h1>sign in here</h1>
+
+<form name="formSignin" ng-submit="signinForm(user)">
+    <div class="form-group">
+        <label for="userName">User Name</label>
+        <input type="text" class="form-control" id="userName" placeholder="User Name" ng-model="user.user_name">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" ng-model="user.password">
+    </div>
+    <button type="submit" class="btn btn-default">Sign In</button>
+</form>
