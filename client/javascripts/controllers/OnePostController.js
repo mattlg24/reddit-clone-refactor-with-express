@@ -14,7 +14,7 @@ app.controller('OnePostController', ['$scope', '$http', '$routeParams', 'onePost
     $scope.deletePost = function() {
         // console.log('delete was clicked');
         deleteService.delete(id)
-        $location.url('/')
+        $location.url('/posts')
     }
 
     $scope.editPost = function(post) {
