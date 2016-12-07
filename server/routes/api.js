@@ -25,6 +25,7 @@ router.get('/posts/:id', function(req, res, next) {
         })
 })
 
+// post a post
 router.post('/posts', function(req, res, next) {
     // console.log('api.js router.post');
     // console.log('req.body', req.body);
@@ -42,10 +43,11 @@ router.post('/posts', function(req, res, next) {
         })
 })
 
+// edit a post
 router.put('/posts/:id', function(req, res, next) {
-    console.log('api.js router.put');
-    console.log('id', req.params.id);
-    console.log('req.body', req.body);
+    // console.log('api.js router.put');
+    // console.log('id', req.params.id);
+    // console.log('req.body', req.body);
     knex('posts')
         .where('id', req.body.id)
         .update({
@@ -59,6 +61,7 @@ router.put('/posts/:id', function(req, res, next) {
         })
 })
 
+// delete
 router.delete('/posts/:id', function(req, res, next) {
     // console.log('api.js router.delete');
     // console.log('id', req.params.id);
@@ -70,8 +73,9 @@ router.delete('/posts/:id', function(req, res, next) {
         })
 })
 
+//signup
 router.post('/signup', function(req, res, next) {
-    console.log('api.js router.get signup');
+    // console.log('api.js router.get signup');
     // console.log('req.body is ', req.body);
     knex('users')
         .where('user_name', req.body.user_name)
@@ -99,12 +103,24 @@ router.post('/signup', function(req, res, next) {
         })
 })
 
+// sign in
 router.post('/signin', function(req, res, next) {
     console.log('api.js router.get signin route');
-    console.log('req.body.id', req.body);
+    console.log('req.body', req.body);
     knex('users')
         .where('user_name', req.body.user_name)
-        //check to make sure user exists and passwords match
+        .first()
+        .then((user) => {
+          var passwordMatch = bcrypt.compareSync(req.body.password, user.hashed_pw)
+          if (passwordMatch == false) {
+            console.log('Bad username or password');
+          } else {
+            req.session.userInfo = user
+            // console.log('req.session.userInfo', user);
+            //delete hashed_pw
+            res.json(user)
+          }
+        })
 
 })
 

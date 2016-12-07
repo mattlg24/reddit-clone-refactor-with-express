@@ -1,5 +1,3 @@
-var app = angular.module('redditCloneApp')
-
 app.controller('OnePostController', ['$scope', '$http', '$routeParams', 'onePostService', 'deleteService', 'editService', '$location', function($scope, $http, $routeParams, onePostService, deleteService, editService, $location) {
 
     let id = $routeParams.id

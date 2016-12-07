@@ -1,12 +1,10 @@
-var app = angular.module('redditCloneApp')
-
 app.controller('MainController', ['$scope', '$http', 'postsService', '$cookies', function($scope, $http, postsService, $cookies) {
 
     $scope.view = {}
     $scope.post = {}
     $scope.commentForm = {};
 
-    const cookie = $cookies.getObject('loggedIn')
+    const cookie = $cookies.getObject('loggedIn') //use this to maybe show edit or delete button on a post if cookie.id = posts.user.id
 
     $scope.logout = function() {
         $cookies.remove('loggedIn')
