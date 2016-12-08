@@ -9,7 +9,7 @@ router.get('/posts', function(req, res, next) {
     knex('posts')
     .join('users', 'users.id','posts.user_id')
         .then(function(results) {
-            console.log('api.js results are', results);
+            // console.log('api.js results are', results);
             res.json(results)
         })
 });
@@ -84,10 +84,9 @@ router.post('/signup', function(req, res, next) {
         .where('user_name', req.body.user_name)
         .then(function(results) {
             if (results.length >= 1) {
-                console.log('that username is already taken.')
+                console.log('that username is already taken.') //make this visible to user
             } else {
                 let hash = bcrypt.hashSync(req.body.password, 12)
-                    // console.log('hash', hash);
                 knex('users')
                     .insert({
                         name: req.body.name,
@@ -108,8 +107,8 @@ router.post('/signup', function(req, res, next) {
 
 // sign in
 router.post('/signin', function(req, res, next) {
-    console.log('api.js router.get signin route');
-    console.log('req.body', req.body);
+    // console.log('api.js router.get signin route');
+    // console.log('req.body', req.body);
     knex('users')
         .where('user_name', req.body.user_name)
         .first()
@@ -121,6 +120,10 @@ router.post('/signin', function(req, res, next) {
             req.session.userInfo = user
             // console.log('req.session.userInfo', user);
             //delete hashed_pw
+            // delete user.hashed_pw
+            console.log('user hash is = ', user);
+            delete user.hashed_pw
+            console.log('now the hash is = ', user);
             res.json(user)
           }
         })
