@@ -13,7 +13,7 @@ app.controller('MainController', ['$scope', '$http', 'postsService', '$cookies',
 
     postsService.getPosts()
         .then(function(results) {
-            console.log('MainController results are', results.data);
+            // console.log('MainController results are', results.data);
             $scope.allPosts = results.data
         })
 
