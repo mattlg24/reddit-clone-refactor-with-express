@@ -17,12 +17,12 @@ router.get('/posts', function(req, res, next) {
 // get one post
 router.get('/posts/:id', function(req, res, next) {
     // console.log('i got to one post router.get');
-    console.log('post id', req.params.id);
+    // console.log('post id', req.params.id);
     knex('posts')
     .join('users', 'users.id', 'posts.user_id')
     .where('posts.id', req.params.id)
     .then(function(onePost) {
-        console.log('one post is', onePost);
+        // console.log('one post is', onePost);
         res.send(onePost)
     })
 })

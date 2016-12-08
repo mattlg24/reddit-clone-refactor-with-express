@@ -1,14 +1,11 @@
 app.controller('OnePostController', ['$scope', '$http', '$routeParams', 'onePostService', 'deleteService', 'editService', '$location', '$cookies', function($scope, $http, $routeParams, onePostService, deleteService, editService, $location, $cookies) {
 
-    const cookie = $cookies.getObject('loggedIn')
-    console.log('the cookie is', cookie);
-
     let id = $routeParams.id
         // console.log('post id is', id);
 
     onePostService.onePost(id)
         .then(function(results) {
-            console.log('OnePostController results are', results.data[0]);
+            // console.log('OnePostController results are', results.data[0]);
             $scope.onePost = results.data[0]
         })
 

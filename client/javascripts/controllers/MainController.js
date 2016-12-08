@@ -5,7 +5,7 @@ app.controller('MainController', ['$scope', '$http', 'postsService', '$cookies',
     $scope.commentForm = {};
 
     const cookie = $cookies.getObject('loggedIn') //use this to maybe show edit or delete button on a post if cookie.id = posts.user.id
-    console.log('cookie.data is', cookie.data);
+    // console.log('cookie.data is', cookie.data);
 
     $scope.logout = function() {
         $cookies.remove('loggedIn')
