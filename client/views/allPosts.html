@@ -58,11 +58,11 @@
                 <input type="text" name="title" id="title" class="form-control" placeholder="Title" ng-model="post.title" ng-required="true">
                 <small class="help-block" ng-show="postForm.title.$error.minlength">Title is too short</small>
             </div>
-            <div class="form-group" ng-class="{'has-error': postForm.author.$invalid && !postForm.author.$pristine, 'has-success': postForm.author.$valid}">
+            <!-- <div class="form-group" ng-class="{'has-error': postForm.author.$invalid && !postForm.author.$pristine, 'has-success': postForm.author.$valid}">
                 <label for="author">Author</label>
                 <input type="text" name="author" id="author" class="form-control" placeholder="Author" ng-model="post.author" ng-required="true">
                 <small class="help-block" ng-show="postForm.author.$error.minlength">Author name is too short</small>
-            </div>
+            </div> -->
             <div class="form-group" ng-class="{'has-error': postForm.imageUrl.$invalid && !postForm.imageUrl.$pristine, 'has-success': postForm.imageUrl.$valid}">
                 <label for="imageUrl">Image URL</label>
                 <input type="text" name="imageUrl" id="imageUrl" class="form-control" placeholder="Image URL" ng-model="post.imageUrl" ng-required="true">
@@ -89,7 +89,7 @@
             </div>
             <div class="media-body">
                 <h4 class="media-heading"><a href="/#/onePost/{{post.id}}">{{post.title}}</a> | <span class="glyphicon glyphicon-arrow-down" aria-hidden="true" ng-click="downVote(post)"></span><span class="glyphicon glyphicon-arrow-up" aria-hidden="true" ng-click="upVote(post)"></span><span ng-class="{plusVote: post.votes > 0, negativeVote: post.votes < 0}">{{post.votes}}</span></h4>
-                <p class="pull-right">By {{post.author}}</p>
+                <p class="pull-right">By {{post.user_name}}</p>
                 <br>
                 <p>{{post.description}}</p>
                 <p><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{post.date | date:'fullDate'}} | <span ng-click="commentSection = !commentSection"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>

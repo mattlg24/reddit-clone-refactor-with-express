@@ -9,19 +9,19 @@ exports.seed = function(knex, Promise) {
                 knex('users')
                 .insert({
                     name: 'Dracula',
-                    user_name: 'blood sucker',
+                    user_name: 'Blood Sucker',
                     hashed_pw: 'thiswillbeahashedpw',
                 }),
                 knex('users')
                 .insert({
                     name: 'Santa',
-                    user_name: 'fat guy',
+                    user_name: 'Fat Guy',
                     hashed_pw: 'thiswillbeahashedpw',
                 }),
                 knex('users')
                 .insert({
                     name: 'Tom the Turkey',
-                    user_name: 'mr. delicious',
+                    user_name: 'Mr. Delicious',
                     hashed_pw: 'thiswillbeahashedpw',
                 })
             ]);

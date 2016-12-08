@@ -8,7 +8,6 @@ exports.up = function(knex) {
             .inTable('users')
             .onDelete('CASCADE')
         table.string('title')
-        table.string('author')
         table.string('imageUrl')
         table.string('description', 1000)
         table.integer('votes')

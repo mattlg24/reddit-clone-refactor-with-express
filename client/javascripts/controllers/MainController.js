@@ -5,6 +5,7 @@ app.controller('MainController', ['$scope', '$http', 'postsService', '$cookies',
     $scope.commentForm = {};
 
     const cookie = $cookies.getObject('loggedIn') //use this to maybe show edit or delete button on a post if cookie.id = posts.user.id
+    console.log('cookie.data is', cookie.data);
 
     $scope.logout = function() {
         $cookies.remove('loggedIn')
@@ -12,20 +13,23 @@ app.controller('MainController', ['$scope', '$http', 'postsService', '$cookies',
 
     postsService.getPosts()
         .then(function(results) {
-            // console.log('MainController results are', results.data);
+            console.log('MainController results are', results.data);
             $scope.allPosts = results.data
         })
 
     $scope.newPost = function(obj) {
+      $scope.post.user_id = cookie.data.id
+      console.log('Scope.post.user_id', cookie.data.id);
         event.preventDefault()
             // console.log('am i getting here?');
         postsService.newPost(obj)
             .then(function(results) {
-                console.log('controller results are', results.data);
+                console.log('controller new post results are', results.data);
             })
         $scope.post.date = new Date()
         $scope.allPosts.push($scope.post)
             // console.log('all posts are', $scope.allPosts);
+            console.log('the post is', $scope.post);
             // console.log('all posts length', $scope.allPosts.length);
         $scope.post = ''
         $scope.postForm.$setPristine()

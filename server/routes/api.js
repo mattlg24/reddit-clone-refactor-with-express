@@ -7,8 +7,9 @@ var bcrypt = require('bcrypt')
 router.get('/posts', function(req, res, next) {
     // console.log('i got here api.js router.get');
     knex('posts')
+    .join('users', 'users.id','posts.user_id')
         .then(function(results) {
-            // console.log('api.js results are', results);
+            console.log('api.js results are', results);
             res.json(results)
         })
 });
@@ -29,16 +30,18 @@ router.get('/posts/:id', function(req, res, next) {
 router.post('/posts', function(req, res, next) {
     // console.log('api.js router.post');
     // console.log('req.body', req.body);
-    knex('posts ')
+    knex('posts')
         .insert({
             title: req.body.title,
-            author: req.body.author,
+            // author: req.body.author,
+            user_id: req.body.user_id,
             imageUrl: req.body.imageUrl,
             description: req.body.description,
             votes: 0,
             date: new Date()
         }, '*')
         .then(function(results) {
+          console.log('res are', results);
             res.send(results)
         })
 })
