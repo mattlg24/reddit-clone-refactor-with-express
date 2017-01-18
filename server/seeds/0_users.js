@@ -24,6 +24,12 @@ exports.seed = function(knex, Promise) {
                     user_name: 'Mr. Delicious',
                     hashed_pw: 'thiswillbeahashedpw',
                 })
+                knex('users')
+                .insert({
+                    name: 'New Year\'s Ned',
+                    user_name: 'Little Guy',
+                    hashed_pw: 'thiswillbeahashedpw',
+                })
             ]);
         });
 };

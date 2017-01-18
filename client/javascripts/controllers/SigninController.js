@@ -24,6 +24,4 @@ app.controller('SigninController', ['$scope', '$location', 'signinService', '$co
                 $location.url('/posts')
             })
     }
-
-
 }])

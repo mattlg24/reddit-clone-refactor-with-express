@@ -11,8 +11,8 @@
             <p>{{onePost.description}}</p>
             <p><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{onePost.date | date:'fullDate'}}
                 <div>
-                    <button type="button" class="btn btn-primary" ng-click="showEditPostForm = !showEditPostForm">Edit Post</button>
-                    <button type="button" class="btn btn-danger" ng-click="deletePost()">Delete Post</button>
+                    <button type="button" class="btn btn-primary" ng-click="showEditPostForm = !showEditPostForm" ng-show="onePost.user_id==cookie.id">Edit Post</button>
+                    <button type="button" class="btn btn-danger" ng-click="deletePost()" ng-show="onePost.user_id==cookie.id">Delete Post</button>
                 </div>
         </div>
         <!-- edit post form -->

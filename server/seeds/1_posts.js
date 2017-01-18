@@ -32,6 +32,15 @@ exports.seed = function(knex, Promise) {
                     votes: 1,
                     date: 'October 22, 2016',
                     // momentDate: moment().subtract(5, 'days').calendar()
+                }),
+                knex('posts').insert({
+                    user_id: '4',
+                    title: 'New Year',
+                    imageUrl: 'http://www.wikihow.com/images/e/ee/Colored-Intro-7.jpg',
+                    description: 'The new year is right around the corner! Who has their New Year\'s resolutions?',
+                    votes: 3,
+                    date: 'December 29, 2016',
+                    // momentDate: moment().subtract(5, 'days').calendar()
                 })
             ]);
         });
