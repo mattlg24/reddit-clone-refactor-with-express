@@ -23,7 +23,7 @@ exports.seed = function(knex, Promise) {
                     name: 'Tom the Turkey',
                     user_name: 'Mr. Delicious',
                     hashed_pw: 'thiswillbeahashedpw',
-                })
+                }),
                 knex('users')
                 .insert({
                     name: 'New Year\'s Ned',
