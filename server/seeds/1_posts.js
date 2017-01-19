@@ -36,7 +36,7 @@ exports.seed = function(knex, Promise) {
                 knex('posts').insert({
                     user_id: '4',
                     title: 'New Year',
-                    imageUrl: 'http://www.wikihow.com/images/e/ee/Colored-Intro-7.jpg',
+                    imageUrl: 'https://10amazingfacts.files.wordpress.com/2013/01/10.jpg',
                     description: 'The new year is right around the corner! Who has their New Year\'s resolutions?',
                     votes: 3,
                     date: 'December 29, 2016',
